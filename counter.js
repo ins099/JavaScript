@@ -11,4 +11,53 @@ function count(){
 
 document.addEventListener('DOMContentLoaded',function(){
     document.querySelector('button').onclick = count;
-})
+});
+
+
+//                                            Working With Form
+
+document.addEventListener('DOMContentLoaded',function(){
+        
+    function printname(){
+        const name = document.querySelector('#name').value;
+        alert(`Hello, ${name}`)};
+    
+    document.querySelector('form').onsubmit= printname;
+});
+
+
+//                                          Changing CSS with JS (1)
+document.addEventListener('DOMContentLoaded',function(){
+
+    document.querySelector('#red').onclick = function(){
+        document.querySelector('h1').style.color = 'red';
+    }
+    document.querySelector('#blue').onclick = function(){
+        document.querySelector('h1').style.color = 'blue';
+    }
+    document.querySelector('#green').onclick = function(){
+        document.querySelector('h1').style.color = 'green';
+    }
+});
+
+//                                          Changing CSS with JS (2)
+
+document.addEventListener('DOMContentLoaded',function(){
+
+    document.querySelectorAll('button').forEach(function(button){
+        button.onclick = function(){
+            document.querySelector('#hello').style.color = button.dataset.color;
+        };
+    });
+
+});
+
+//                                          Changing CSS with JS using Dropdown (3)
+
+document.addEventListener('DOMContentLoaded',function(){
+
+    document.querySelector('select').onchange=function(){
+            document.querySelector('#hello').style.color = this.value;
+    };
+
+});
